@@ -8,16 +8,11 @@
 
 <title>Imóveis & Investimentos Imobiliários</title>
 
-<link rel="apple-touch-icon" href="logo.png">
 <link rel="icon" type="image/png" href="logo.png">
-<link rel="manifest" href="manifest.json">
-
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#0B1218">
 
 <style>
 
-/* ===== ESTRUTURA DA PÁGINA ===== */
+/* estrutura */
 
 html,body{
 margin:0;
@@ -25,10 +20,9 @@ padding:0;
 height:100%;
 background:#0B1218;
 overflow:hidden;
-font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ===== CONTAINER PRINCIPAL ===== */
+/* container */
 
 .app-container{
 width:100%;
@@ -36,7 +30,7 @@ height:100vh;
 position:relative;
 }
 
-/* ===== APP BASE44 ===== */
+/* app */
 
 iframe{
 width:100%;
@@ -45,7 +39,7 @@ border:none;
 display:block;
 }
 
-/* ===== LOGO SUPERIOR ===== */
+/* logo superior */
 
 .minha-logo{
 position:fixed;
@@ -56,7 +50,7 @@ z-index:10000;
 pointer-events:none;
 }
 
-/* ===== CURATIVO (COBRE A MARCA) ===== */
+/* CURATIVO */
 
 .curativo{
 
@@ -65,45 +59,39 @@ position:fixed;
 bottom:0;
 right:0;
 
-/* ajuste tamanho aqui */
-
 width:380px;
 height:140px;
 
 background:#0B1218;
 
-/* canto arredondado */
+/* arredondamento */
 
 border-top-left-radius:40px;
 
-z-index:9999;
+z-index:999999;
 
 pointer-events:none;
 
 }
 
-/* ===== LOGO SOBRE O CURATIVO ===== */
+/* LOGO NO CURATIVO */
 
 .logo-curativo{
 
 position:fixed;
 
-/* ajuste posição aqui */
-
-bottom:30px;
-right:35px;
-
-/* tamanho da logo */
+bottom:35px;
+right:150px;
 
 width:60px;
 
-z-index:10001;
+z-index:999999;
 
 pointer-events:none;
 
 }
 
-/* ===== AJUSTE AUTOMÁTICO MOBILE ===== */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -113,9 +101,9 @@ height:100px;
 }
 
 .logo-curativo{
-width:42px;
-bottom:22px;
-right:22px;
+width:40px;
+bottom:25px;
+right:90px;
 }
 
 }
@@ -128,16 +116,12 @@ right:22px;
 
 <div class="app-container">
 
-<!-- logo superior -->
 <img src="logo.png" class="minha-logo">
 
-<!-- aplicativo -->
 <iframe src="https://imoveis-investimentos-imoveis-d09a2daa.base44.app"></iframe>
 
-<!-- curativo -->
 <div class="curativo"></div>
 
-<!-- logo sobre o curativo -->
 <img src="logo.png" class="logo-curativo">
 
 </div>
