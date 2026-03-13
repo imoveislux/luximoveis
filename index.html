@@ -17,52 +17,46 @@
 
 <style>
 
-/* reset */
+/* ===== ESTRUTURA DA PÁGINA ===== */
 
 html,body{
 margin:0;
 padding:0;
+height:100%;
 background:#0B1218;
-overflow-y:auto;
+overflow:hidden;
+font-family:Arial, Helvetica, sans-serif;
 }
 
-/* container */
+/* ===== CONTAINER PRINCIPAL ===== */
 
 .app-container{
 width:100%;
+height:100vh;
 position:relative;
 }
 
-/* iframe do app */
+/* ===== APP BASE44 ===== */
 
 iframe{
-
 width:100%;
-height:200vh; /* permite rolar o app */
-
+height:100%;
 border:none;
 display:block;
-
 }
 
-/* logo */
+/* ===== LOGO SUPERIOR ===== */
 
 .minha-logo{
-
 position:fixed;
-
 top:15px;
 left:15px;
-
 width:50px;
-
 z-index:10000;
-
 pointer-events:none;
-
 }
 
-/* curativo principal */
+/* ===== CURATIVO (COBRE A MARCA) ===== */
 
 .curativo{
 
@@ -71,10 +65,16 @@ position:fixed;
 bottom:0;
 right:0;
 
-width:340px;
-height:120px;
+/* ajuste tamanho aqui */
+
+width:380px;
+height:140px;
 
 background:#0B1218;
+
+/* canto arredondado */
+
+border-top-left-radius:40px;
 
 z-index:9999;
 
@@ -82,15 +82,40 @@ pointer-events:none;
 
 }
 
-/* ajuste automático mobile */
+/* ===== LOGO SOBRE O CURATIVO ===== */
+
+.logo-curativo{
+
+position:fixed;
+
+/* ajuste posição aqui */
+
+bottom:30px;
+right:35px;
+
+/* tamanho da logo */
+
+width:60px;
+
+z-index:10001;
+
+pointer-events:none;
+
+}
+
+/* ===== AJUSTE AUTOMÁTICO MOBILE ===== */
 
 @media (max-width:768px){
 
 .curativo{
+width:240px;
+height:100px;
+}
 
-width:230px;
-height:90px;
-
+.logo-curativo{
+width:42px;
+bottom:22px;
+right:22px;
 }
 
 }
@@ -103,11 +128,17 @@ height:90px;
 
 <div class="app-container">
 
+<!-- logo superior -->
 <img src="logo.png" class="minha-logo">
 
+<!-- aplicativo -->
 <iframe src="https://imoveis-investimentos-imoveis-d09a2daa.base44.app"></iframe>
 
+<!-- curativo -->
 <div class="curativo"></div>
+
+<!-- logo sobre o curativo -->
+<img src="logo.png" class="logo-curativo">
 
 </div>
 
