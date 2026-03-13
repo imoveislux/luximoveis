@@ -13,32 +13,36 @@
 <link rel="manifest" href="manifest.json">
 
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0B1218">
 
 <style>
 
-/* estrutura geral */
+/* reset */
 
 html,body{
 margin:0;
 padding:0;
-height:100%;
 background:#0B1218;
-overflow-x:hidden;
+overflow-y:auto;
 }
 
 /* container */
 
 .app-container{
-position:relative;
 width:100%;
+position:relative;
 }
 
-/* iframe */
+/* iframe do app */
 
 iframe{
+
 width:100%;
+height:200vh; /* permite rolar o app */
+
 border:none;
 display:block;
+
 }
 
 /* logo */
@@ -58,23 +62,36 @@ pointer-events:none;
 
 }
 
-/* curativo */
+/* curativo principal */
 
 .curativo{
 
-position:absolute;
+position:fixed;
 
 bottom:0;
-left:0;
+right:0;
 
-width:100%;
-height:140px;
+width:340px;
+height:120px;
 
 background:#0B1218;
 
 z-index:9999;
 
 pointer-events:none;
+
+}
+
+/* ajuste automático mobile */
+
+@media (max-width:768px){
+
+.curativo{
+
+width:230px;
+height:90px;
+
+}
 
 }
 
@@ -88,35 +105,11 @@ pointer-events:none;
 
 <img src="logo.png" class="minha-logo">
 
-<iframe id="appframe"
-src="https://imoveis-investimentos-imoveis-d09a2daa.base44.app">
-</iframe>
+<iframe src="https://imoveis-investimentos-imoveis-d09a2daa.base44.app"></iframe>
 
 <div class="curativo"></div>
 
 </div>
-
-<script>
-
-/* ajusta altura automaticamente */
-
-function ajustarAltura(){
-
-let alturaTela = window.innerHeight;
-
-document.getElementById("appframe").style.height = alturaTela + "px";
-
-}
-
-/* executa ao carregar */
-
-window.addEventListener("load", ajustarAltura);
-
-/* executa ao redimensionar */
-
-window.addEventListener("resize", ajustarAltura);
-
-</script>
 
 </body>
 
