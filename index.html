@@ -17,23 +17,22 @@
 
 <style>
 
-/* CONFIGURAÇÃO DA PÁGINA */
+/* CONFIGURAÇÃO GERAL */
 
 html, body {
 
 margin:0;
 padding:0;
 height:100%;
+background:#0B1218;
 
-/* AGORA A PÁGINA PODE ROLAR */
+/* permite rolar a página */
 
 overflow-y:auto;
 
-background-color:#0B1218;
-
 }
 
-/* ESPAÇO EXTRA PARA O CURATIVO NÃO COBRIR BOTÕES */
+/* espaço para evitar que o curativo cubra botões */
 
 body{
 
@@ -41,7 +40,7 @@ padding-bottom:120px;
 
 }
 
-/* CONTAINER PRINCIPAL */
+/* container principal */
 
 .app-container{
 
@@ -53,21 +52,17 @@ background:#0B1218;
 
 }
 
-/* APP DO BASE44 */
+/* aplicativo do Base44 */
 
 iframe{
 
 width:100%;
-
-/* DIMINUÍMOS A ALTURA PARA NÃO FICAR ATRÁS DO CURATIVO */
-
 height:calc(100vh - 80px);
-
 border:none;
 
 }
 
-/* SUA LOGO */
+/* sua logo */
 
 .minha-logo{
 
@@ -77,7 +72,6 @@ top:15px;
 left:15px;
 
 width:50px;
-
 height:auto;
 
 z-index:10000;
@@ -86,22 +80,21 @@ pointer-events:none;
 
 }
 
-/* CURATIVO PARA COBRIR MARCA */
+/* CURATIVO INTELIGENTE (apenas no canto da marca) */
 
 .curativo{
 
 position:fixed;
 
-bottom:0;
-left:0;
+bottom:15px;
+right:15px;
 
-/* FUNCIONA EM QUALQUER TELA */
-
-width:100%;
-
-height:80px;
+width:260px;
+height:90px;
 
 background:#0B1218;
+
+border-radius:10px;
 
 z-index:9999;
 
